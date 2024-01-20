@@ -1,0 +1,34 @@
+.btn, .btn2 {
+  border: none;
+  color: tomato;
+  padding: 10px 20px;
+  background-color: transparent;
+  transition: ease 0.5s;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: tomato;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transform: translate(100px);
+  transform-origin: right top;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  color: white;
+}
+.btn:hover .btn2::after {
+  filter: blur(10px);
+}
+.btn:hover::after {
+  transform: translate(0px);
+}
